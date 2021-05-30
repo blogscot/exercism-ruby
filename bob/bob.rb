@@ -1,7 +1,7 @@
 class Bob
   def self.hey(remark)
     remark = remark.strip
-    yelling = remark.upcase == remark && remark.match?(/[A-Z]/)
+    yelling = remark.upcase == remark && remark.downcase != remark
     question = remark.end_with?('?')
     return "Calm down, I know what I'm doing!" if yelling && question
     return 'Sure.' if question
